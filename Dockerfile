@@ -10,8 +10,8 @@ ENV LANG C
 
 # ------------------------------------------------------------------------------
 # Install applications and clean up
-RUN apt-get update && apt-get install -y --no-install-recommends \
-rtorrent openvpn screen tmux locales && \
+RUN apt-get update && apt-get install -y \
+--no-install-recommends rtorrent openvpn locales && \
 sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && locale-gen && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
