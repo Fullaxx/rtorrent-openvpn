@@ -34,14 +34,14 @@ Run the image using the default port without OpenVPN
     -it -p 49164:49164 fullaxx/rtorrent-openvpn
 
 Run the image using the default port with OpenVPN \
-Make sure that your myopenvpnconfig.ovpn exists in /srv/docker/rtorrent/config/
+Make sure that your myconnection.ovpn exists in /srv/docker/rtorrent/config/
 
     docker run --cap-add=NET_ADMIN --device /dev/net/tun \
     -v /srv/docker/rtorrent/autoload:/rtorrent/autoload \
     -v /srv/docker/rtorrent/torrents:/rtorrent/torrents \
     -v /srv/docker/rtorrent/config:/rtorrent/config \
     -v /srv/docker/rtorrent/session:/rtorrent/session \
-    -e OVPNCFG='myopenvpnconfig.ovpn' \
+    -e OVPNCFG='myconnection.ovpn' \
     -e OVPNSLEEPTIME='4' \
     -it -p 49164:49164 fullaxx/rtorrent-openvpn
 
