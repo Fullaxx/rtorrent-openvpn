@@ -1,7 +1,11 @@
-# A docker container running rtorrent with openvpn
+# A small docker image running rtorrent with openvpn
 
 ## Base Docker Image
-Ubuntu 18.04 (x64)
+[Ubuntu](https://hub.docker.com/_/ubuntu) 18.04 (x64)
+
+## Software
+[rtorrent](https://rakshasa.github.io/rtorrent/) - An ncurses-based bittorrent application
+[openvpn](https://openvpn.net/)
 
 ## Get the image from Docker Hub
 ```
@@ -37,12 +41,12 @@ Run the image using the default port with OpenVPN \
 Make sure that your myconnection.ovpn exists in /srv/docker/rtorrent/config/
 ```
 docker run --cap-add=NET_ADMIN --device /dev/net/tun \
+-e OVPNCFG='myconnection.ovpn' \
+-e OVPNSLEEPTIME='4' \
 -v /srv/docker/rtorrent/autoload:/rtorrent/autoload \
 -v /srv/docker/rtorrent/torrents:/rtorrent/torrents \
 -v /srv/docker/rtorrent/config:/rtorrent/config \
 -v /srv/docker/rtorrent/session:/rtorrent/session \
--e OVPNCFG='myconnection.ovpn' \
--e OVPNSLEEPTIME='4' \
 -it -p 49164:49164 fullaxx/rtorrent-openvpn
 ```
 ## Build it locally using the github repository
