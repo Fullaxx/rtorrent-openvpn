@@ -11,6 +11,7 @@
 ```
 docker pull fullaxx/rtorrent-openvpn
 ```
+
 ## Required Volume Options
 Input: Drop your torrents in /srv/docker/rtorrent/autoload/
 ```
@@ -29,6 +30,7 @@ Session State: Use this to save your session for fast restore/resume
 ```
 -v /srv/docker/rtorrent/session:/rtorrent/session
 ```
+
 ## Run the image
 Run the image using the default port without OpenVPN
 ```
@@ -49,6 +51,7 @@ docker run --cap-add=NET_ADMIN --device /dev/net/tun \
 -v /srv/docker/rtorrent/session:/rtorrent/session \
 -it -p 49164:49164 fullaxx/rtorrent-openvpn
 ```
+
 ## Build it locally using the github repository
 ```
 docker build -t="fullaxx/rtorrent-openvpn" github.com/fullaxx/rtorrent-openvpn
