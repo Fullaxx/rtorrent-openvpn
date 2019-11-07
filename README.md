@@ -44,8 +44,10 @@ Run the image using the default port with OpenVPN \
 Make sure that your myconnection.ovpn exists in /srv/docker/rtorrent/config/
 ```
 docker run -it --cap-add=NET_ADMIN --device /dev/net/tun \
+--sysctl net.ipv6.conf.all.disable_ipv6=0 \
 -e OVPNCFG='myconnection.ovpn' \
--e OVPNSLEEPTIME='4' \
+-e OVPNSLEEPTIME='9' \
+-e LOGFILE='mylog' \
 -v /srv/docker/rtorrent/autoload:/rtorrent/autoload \
 -v /srv/docker/rtorrent/torrents:/rtorrent/torrents \
 -v /srv/docker/rtorrent/config:/rtorrent/config \
