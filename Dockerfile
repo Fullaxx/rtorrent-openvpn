@@ -11,16 +11,13 @@ ENV LANG C
 # ------------------------------------------------------------------------------
 # Install applications and clean up
 RUN apt-get update && apt-get install -y \
---no-install-recommends rtorrent openvpn locales && \
-sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && locale-gen && \
-apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+      --no-install-recommends rtorrent openvpn locales && \
+    sed -e 's/# en_US.UTF-8/en_US.UTF-8/' -i /etc/locale.gen && locale-gen && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
 # Prepare rtorrent directories
-RUN mkdir -p \
-/rtorrent/torrents \
-/rtorrent/session \
-/rtorrent/complete
+RUN mkdir -p /rtorrent/torrents /rtorrent/session /rtorrent/complete
 
 # ------------------------------------------------------------------------------
 # Install startup scripts

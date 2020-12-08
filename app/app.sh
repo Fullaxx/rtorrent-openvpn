@@ -6,11 +6,6 @@ bail()
   exit 1
 }
 
-# https://www.cyberciti.biz/faq/bash-shell-check-for-any-mp3-files-in-directory/
-#shopt -s nullglob
-#OVPNCFG=`ls -1 /rtorrent/config/*.ovpn | head -n1`
-#shopt -u nullglob
-
 if [ x"${OVPNCFG}" != "x" ]; then
   /app/openvpn.sh || bail "openvpn startup failed!"
   /app/monitor.sh &
