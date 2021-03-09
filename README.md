@@ -7,9 +7,10 @@
 [rtorrent](https://rakshasa.github.io/rtorrent/) - An ncurses-based bittorrent application \
 [openvpn](https://openvpn.net/)
 
-## Get the image from Docker Hub
+## Get the image from Docker Hub or build it locally
 ```
 docker pull fullaxx/rtorrent-openvpn
+docker build -t="fullaxx/rtorrent-openvpn" github.com/Fullaxx/rtorrent-openvpn
 ```
 
 ## Required Volume Options
@@ -54,9 +55,4 @@ docker run -it \
 -v /srv/docker/rtorrent/config:/rtorrent/config \
 -v /srv/docker/rtorrent/session:/rtorrent/session \
 -p 49164:49164 fullaxx/rtorrent-openvpn
-```
-
-## Build it locally using the github repository
-```
-docker build -t="fullaxx/rtorrent-openvpn" github.com/Fullaxx/rtorrent-openvpn
 ```
