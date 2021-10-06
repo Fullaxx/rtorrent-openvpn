@@ -4,8 +4,8 @@
 [Ubuntu](https://hub.docker.com/_/ubuntu) 20.04 (x64)
 
 ## Software
-[rtorrent](https://rakshasa.github.io/rtorrent/) - An ncurses-based bittorrent application \
-[openvpn](https://openvpn.net/)
+* [rtorrent](https://rakshasa.github.io/rtorrent/) - An ncurses-based bittorrent application
+* [openvpn](https://openvpn.net/)
 
 ## Get the image from Docker Hub or build it locally
 ```
