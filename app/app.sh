@@ -8,7 +8,10 @@ bail()
 
 if [ x"${OVPNCFG}" != "x" ]; then
   /app/openvpn.sh || bail "openvpn startup failed!"
-  /app/monitor.sh &
+  if [ "${MONITOR}" == "1" ]; then
+    /app/monitor.sh &
+    /app/monitor_restarts.sh &
+  fi
 fi
 
 if [ -r /rtorrent/config/rtorrent.rc ]; then
