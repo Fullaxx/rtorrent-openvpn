@@ -39,7 +39,7 @@ Run the image using the default port without OpenVPN
 docker run -it \
 -v /srv/docker/rtorrent/autoload:/rtorrent/autoload \
 -v /srv/docker/rtorrent/torrents:/rtorrent/torrents \
--p 49164:49164 fullaxx/rtorrent-openvpn
+fullaxx/rtorrent-openvpn
 ```
 Run the image using the default port with OpenVPN \
 Make sure that your myconnection.ovpn exists in /srv/docker/rtorrent/config/
@@ -54,5 +54,5 @@ docker run -it \
 -v /srv/docker/rtorrent/torrents:/rtorrent/torrents \
 -v /srv/docker/rtorrent/config:/rtorrent/config \
 -v /srv/docker/rtorrent/session:/rtorrent/session \
--p 49164:49164 fullaxx/rtorrent-openvpn
+fullaxx/rtorrent-openvpn
 ```
